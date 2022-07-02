@@ -4,6 +4,22 @@
 * Author: BootstrapMade.com
 * License: https://bootstrapmade.com/license/
 */
+function ValidateEmail(inputText)
+{
+var mailformat = /^\w+([\.-]?\w+)*@\w+([\.-]?\w+)*(\.\w{2,3})+$/;
+if(inputText.value.match(mailformat))
+{
+document.form1.email.focus();
+return true;
+}
+else
+{
+alert("You have entered an invalid email address!");
+document.form1.email.focus();
+document.querySelector("form").setAttribute("action","") ;
+return false;
+}
+}
 (function() {
   "use strict";
 
@@ -34,7 +50,7 @@
   }
 
   /**
-   * Easy on scroll event listener 
+   * Easy on scroll event listener
    */
   const onscroll = (el, listener) => {
     el.addEventListener('scroll', listener)
@@ -189,7 +205,7 @@
   });
 
   /**
-   * Initiate portfolio lightbox 
+   * Initiate portfolio lightbox
    */
   const portfolioLightbox = GLightbox({
     selector: '.portfolio-lightbox'
